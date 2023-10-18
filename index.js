@@ -19,6 +19,8 @@ const profiles = [
     },
 ];
 
+app.use('/upload', express.static(path.join(__dirname, 'upload')));
+
 const diskStorage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '/upload')); // -> /upload
